@@ -9,20 +9,16 @@ export default function Footer() {
             <h2>Sell</h2>
             <ul>
               <li>
-                {" "}
-                <a href=""> Start Selling</a>{" "}
+                <a href="/"> Start Selling</a>{" "}
               </li>
               <li>
-                {" "}
-                <a href=""> Learn to Sell</a>
+                <a href="/"> Learn to Sell</a>
               </li>
               <li>
-                {" "}
-                <a href=""> Independent Seller</a>
+                <a href="/"> Independent Seller</a>
               </li>
               <li>
-                {" "}
-                <a href=""> Earn More</a>
+                <a href="/"> Earn More</a>
               </li>
             </ul>
           </div>
@@ -30,16 +26,13 @@ export default function Footer() {
             <h2>Shop Here</h2>
             <ul>
               <li>
-                {" "}
-                <a href=""> Women's Fashion</a>
+                <a href="/"> Women's Fashion</a>
               </li>
               <li>
-                {" "}
-                <a href=""> Mobile</a>
+                <a href="/"> Mobile</a>
               </li>
               <li>
-                {" "}
-                <a href=""> Consumer Electronics</a>
+                <a href="/"> Consumer Electronics</a>
               </li>
             </ul>
           </div>
@@ -49,20 +42,16 @@ export default function Footer() {
             <h2>Benefits</h2>
             <ul>
               <li>
-                {" "}
-                <a href=""> Benefits</a>
+                <a href="/"> Benefits</a>
               </li>
               <li>
-                {" "}
-                <a href=""> Daily Deals</a>
+                <a href="/"> Daily Deals</a>
               </li>
               <li>
-                {" "}
-                <a href=""> Product Policy</a>
+                <a href="/"> Product Policy</a>
               </li>
               <li>
-                {" "}
-                <a href=""> Earn More</a>
+                <a href="/"> Earn More</a>
               </li>
             </ul>
           </div>
@@ -70,8 +59,7 @@ export default function Footer() {
             <h2>Company</h2>
             <ul>
               <li>
-                {" "}
-                <a href=""> Company Info</a>
+                <a href="/"> Company Info</a>
               </li>
             </ul>
           </div>
