@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function Newarrivallist({ product }) {
   return (
     <div>
@@ -7,7 +7,6 @@ export default function Newarrivallist({ product }) {
         <div className="newarrivals">
           <div>
             <a href={`/product/${product._id}`}>
-              {" "}
               <img src={product.path} alt="" />
             </a>
           </div>

@@ -6,7 +6,7 @@ import Message from "../components/Message";
 
 export default function Product(props) {
   const productdetails = useSelector((state) => state.productdetails);
-  const { loading, bug, error } = productdetails;
+  const { loading, error, bug } = productdetails;
   const dispatch = useDispatch();
   const productId = props.match.params.id;
   useEffect(() => {

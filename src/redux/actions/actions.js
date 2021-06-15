@@ -58,6 +58,7 @@ export const addToCart = (productId, qty) => async (dispatch, getState) => {
   const { data } = await Axios.get(
     `https://fatafatsewa.herokuapp.com/api/bags/${productId}`
   );
+
   dispatch({
     type: ADD_TO_CART,
     payload: {

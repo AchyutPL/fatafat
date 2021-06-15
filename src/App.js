@@ -5,6 +5,8 @@ import Newarrival from "./components/Rows/Newarrival";
 import Footer from "./components/Footer";
 import Cartscreen from "./components/Cartscreen";
 import Smallphotos from "./components/Smallphotos";
+import Hello from "./components/Hello";
+import Producttest from "./components/Producttest";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,6 +15,7 @@ import {
 } from "react-router-dom";
 
 import Product from "./components/Product";
+import Notfound from "./components/Notfound";
 
 function App() {
   return (
@@ -22,16 +25,20 @@ function App() {
           <Header />
           <Category />
           <Switch>
-            <Router exact path="/">
+            <Router path="/" exact>
               <Sliding />
               <Smallphotos />
               <Newarrival />
             </Router>
             <Route
               path="/product/:id"
-              render={(props) => <Product {...props} />}
-            />
+              render={(props) => (
+                <Product {...props} key={props.match.params.id} />
+              )}
+            ></Route>
             <Route path="/cart/:id?" component={Cartscreen}></Route>
+            <Route path="/hello" exact component={Producttest}></Route>
+            <Route path="*" exact component={Notfound}></Route>
           </Switch>
           <Footer />
         </BrowserRouter>

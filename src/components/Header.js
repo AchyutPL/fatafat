@@ -19,13 +19,13 @@ export default function Header({ count }) {
         </div>
         <div className="otherInfo">
           <div className="login_register">
-            <a href="/login">Login/Register</a>
+            <Link to="/hello">Login/Register</Link>
           </div>
           <div className="referEarn">
-            <a href="/refer-earn">Refer/Earn</a>
+            <a href="/">Refer/Earn</a>
           </div>
           <div className="sellProduct">
-            <a href="/sellproduct"> Sell YourProduct</a>
+            <a href="/"> Sell YourProduct</a>
           </div>
           <div className="mode">
             <div className="circle"></div>
@@ -35,9 +35,9 @@ export default function Header({ count }) {
 
       <div className="searchArea">
         <div className="logo">
-          <a href="/">
+          <Link to="/">
             <img src="/logo.png" alt="" />
-          </a>
+          </Link>
         </div>
         <div className="search">
           <span className="category">
@@ -60,7 +60,7 @@ export default function Header({ count }) {
             <span className="counter">{cartitems.length}</span>
           )}
 
-          <a href="/cart">
+          <a href="/">
             {" "}
             <i
               className="far fa-heart"
