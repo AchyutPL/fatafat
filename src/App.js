@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Cartscreen from "./components/Cartscreen";
 import Smallphotos from "./components/Smallphotos";
 import Hello from "./components/Hello";
-import Producttest from "./components/Producttest";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -37,7 +37,7 @@ function App() {
               )}
             ></Route>
             <Route path="/cart/:id?" component={Cartscreen}></Route>
-            <Route path="/hello" exact component={Producttest}></Route>
+            <Route path="/hello" exact component={Hello}></Route>
             <Route path="*" exact component={Notfound}></Route>
           </Switch>
           <Footer />
