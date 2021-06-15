@@ -8,6 +8,7 @@ import Loading from "../Loading";
 import Message from "../Message";
 import { listproducts } from "../../redux/actions/actions";
 import Axios from "axios";
+
 export default function Newarrival() {
   const dispatch = useDispatch();
   const ourproduct = useSelector((state) => state.ourproduct);
