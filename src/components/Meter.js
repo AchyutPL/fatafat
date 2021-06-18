@@ -7,8 +7,8 @@ export default function Meter() {
 
   let interval = useRef();
   let startTimer = () => {
-    setInterval(() => {
-      let newDate = "17 June 2021";
+    interval = setInterval(() => {
+      let newDate = "29 June 2021";
 
       let currentDate = new Date();
 
