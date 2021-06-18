@@ -7,6 +7,9 @@ import {
   PRODUCT_SCREEN_FAIL,
   ADD_TO_CART,
   REMOVE_FROM_CART,
+  SIGNIN_REQUEST,
+  SIGNIN_FAIL,
+  SIGNIN_SUCCESS,
 } from "./actionconstants";
 import Axios from "axios";
 
@@ -79,4 +82,31 @@ export const removefromcart = (productId) => (dispatch, getState) => {
     payload: productId,
   });
   localStorage.setItem("cartitems", JSON.stringify(getState().cart.cartitems));
+};
+
+export const signIn = (email, password) => async (dispatch) => {
+  dispatch({
+    type: SIGNIN_REQUEST,
+    payload: {
+      email,
+      password,
+    },
+  });
+  try {
+    const { data } = await Axios.post(
+      "http://localhost:5000/api/users/signin",
+      { email, password }
+    );
+
+    dispatch({
+      type: SIGNIN_SUCCESS,
+      payload: data,
+    });
+    localStorage.setItem("userinfo", JSON.stringify(data));
+  } catch (error) {
+    dispatch({
+      type: SIGNIN_FAIL,
+      payload: "Error",
+    });
+  }
 };

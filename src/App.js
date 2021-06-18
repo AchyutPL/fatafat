@@ -5,8 +5,9 @@ import Newarrival from "./components/Rows/Newarrival";
 import Footer from "./components/Footer";
 import Cartscreen from "./components/Cartscreen";
 import Smallphotos from "./components/Smallphotos";
-import Hello from "./components/Hello";
-
+import Searchscreen from "./components/Searchscreen";
+import Meter from "./components/Meter";
+import Signin from "./components/Signin";
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,10 +25,12 @@ function App() {
         <BrowserRouter>
           <Header />
           <Category />
+
           <Switch>
             <Router path="/" exact>
               <Sliding />
               <Smallphotos />
+              <Meter />
               <Newarrival />
             </Router>
             <Route
@@ -37,7 +40,8 @@ function App() {
               )}
             ></Route>
             <Route path="/cart/:id?" component={Cartscreen}></Route>
-            <Route path="/hello" exact component={Hello}></Route>
+            <Route path="/signin" component={Signin}></Route>
+            <Route path="/search/:term" component={Searchscreen}></Route>
             <Route path="*" exact component={Notfound}></Route>
           </Switch>
           <Footer />

@@ -16,14 +16,12 @@ export default function Newarrival() {
   useEffect(() => {
     dispatch(listproducts());
   }, [dispatch]);
-
+  console.log(bags);
   const [mobiles, setmobiles] = useState([]);
 
   useEffect(() => {
     const fetchdata = async () => {
-      const { data } = await Axios.get(
-        "https://fatafatsewa.herokuapp.com/api/mobiles"
-      );
+      const { data } = await Axios.get("http://localhost:5000/api/mobiles");
       setmobiles(data);
     };
     fetchdata();
@@ -44,7 +42,7 @@ export default function Newarrival() {
   const settings = {
     infinite: false,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 5,
 
     responsive: [
@@ -61,7 +59,7 @@ export default function Newarrival() {
   const settingsm = {
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 5,
 
     responsive: [

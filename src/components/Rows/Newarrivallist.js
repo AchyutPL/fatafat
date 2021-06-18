@@ -3,7 +3,7 @@ import React from "react";
 export default function Newarrivallist({ product }) {
   return (
     <div>
-      <div className="arrivalc`ontainer">
+      <div className="arrivalcontainer">
         <div className="newarrivals">
           <div>
             <a href={`/product/${product._id}`}>

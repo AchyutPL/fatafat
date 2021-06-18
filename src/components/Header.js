@@ -1,10 +1,18 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function Header({ count }) {
   const cart = useSelector((state) => state.cart);
 
   const { cartitems } = cart;
+
+  const [searchterm, setsearchterm] = useState("");
+  const history = useHistory();
+  const gotoss = () => {
+    history.push(`/search/${searchterm}`);
+  };
   return (
     <>
       <div className="headerContainer">
@@ -19,7 +27,7 @@ export default function Header({ count }) {
         </div>
         <div className="otherInfo">
           <div className="login_register">
-            <Link to="/hello">Login/Register</Link>
+            <Link to="/signin">Login/Register</Link>
           </div>
           <div className="referEarn">
             <a href="/">Refer/Earn</a>
@@ -43,8 +51,14 @@ export default function Header({ count }) {
           <span className="category">
             <span>Products</span> <i className="fas fa-sort-down"></i>
           </span>
-          <input type="search" name="" id="" />
-          <i className="fa fa-search" aria-hidden="true"></i>
+          <input
+            type="search"
+            name=""
+            id=""
+            value={searchterm}
+            onChange={(e) => setsearchterm(e.target.value)}
+          />
+          <i className="fa fa-search" aria-hidden="true" onClick={gotoss}></i>
         </div>
         <div className="cart">
           <Link to="/cart">

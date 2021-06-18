@@ -366,7 +366,38 @@ html {
     font-size: 12px;
   }
 }
+// -----------------------------------CSS FOR METER--------------------------
+.metercontainer {
+  width: 20%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+  position: relative;
 
+  align-items: center;
+  background-color: black;
+  .styling {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .countdown {
+      font-size: 30px;
+      color: white;
+      font-family: "Titillium Web", sans-serif;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .metercontainer {
+    width: 40%;
+    .styling {
+      .countdown {
+        font-size: 20px;
+      }
+    }
+  }
+}
 // --------------------------CSS FOR ROW -------------------------
 
 .newarrivals {
@@ -375,14 +406,16 @@ html {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 0px 30px 15px 10px;
   background-color: #f0f0f0;
+  border-radius: 15px;
+
   img {
     border-radius: 10px;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 150px;
+    object-fit: contain;
     padding: 5px 0px;
   }
   .bagname {
@@ -702,6 +735,98 @@ footer {
     .btn {
       margin: 5px;
       padding: 7px 80px;
+    }
+  }
+}
+
+// -------------------------------CSS FOR SIGN IN SCREEN------------------------
+.signincontainer {
+  width: 40%;
+  margin: auto;
+  text-align: start;
+
+  .signinform {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    // text-align: center;
+    label {
+      font-size: 18px;
+      font-weight: 600;
+      padding: 10px 0px;
+    }
+    input {
+      width: 94.4%;
+      padding: 10px;
+      outline: none;
+      font-size: 18px;
+      border: 1px solid grey;
+    }
+    button {
+      width: 100%;
+      padding: 10px 0px;
+      margin: 39px 0px;
+      background-color: #e1e100;
+      outline: none;
+      border: 1px solid grey;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 17px;
+      font-family: "Titillium Web", sans-serif;
+      transition: all 0.5s ease;
+      &:hover {
+        background-color: rgb(0, 138, 0);
+        color: white;
+      }
+    }
+  }
+}
+
+// ----------------------------CSS FOR ALLSEARCH--------------------
+.letsmap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
+  .allsearch {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    img {
+      padding: 19px;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 25px;
+    }
+    .name {
+      font-family: "Titillium Web", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      margin: 7px 0px;
+    }
+    .price {
+      font-family: "Titillium Web", sans-serif;
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .letsmap {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    .allsearch {
+      width: 120px;
+      img {
+        height: 120px;
+      }
     }
   }
 }

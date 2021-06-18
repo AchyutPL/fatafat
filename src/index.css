@@ -442,6 +442,48 @@ html {
   }
 }
 
+.metercontainer {
+  width: 20%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 10px;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+}
+
+.metercontainer .styling {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.metercontainer .styling .countdown {
+  font-size: 30px;
+  color: white;
+  font-family: "Titillium Web", sans-serif;
+}
+
+@media screen and (max-width: 700px) {
+  .metercontainer {
+    width: 40%;
+  }
+  .metercontainer .styling .countdown {
+    font-size: 20px;
+  }
+}
+
 .newarrivals {
   padding: 15px 10px;
   display: -webkit-box;
@@ -457,18 +499,19 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 5px 5px 5px grey;
-          box-shadow: 5px 5px 5px grey;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 0px 30px 15px 10px;
   background-color: #f0f0f0;
+  border-radius: 15px;
 }
 
 .newarrivals img {
   border-radius: 10px;
   width: 100%;
-  height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
   padding: 5px 0px;
 }
 
@@ -831,6 +874,124 @@ footer .flexflex {
   .cartcontainer .btn {
     margin: 5px;
     padding: 7px 80px;
+  }
+}
+
+.signincontainer {
+  width: 40%;
+  margin: auto;
+  text-align: start;
+}
+
+.signincontainer .signinform {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.signincontainer .signinform label {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 0px;
+}
+
+.signincontainer .signinform input {
+  width: 94.4%;
+  padding: 10px;
+  outline: none;
+  font-size: 18px;
+  border: 1px solid grey;
+}
+
+.signincontainer .signinform button {
+  width: 100%;
+  padding: 10px 0px;
+  margin: 39px 0px;
+  background-color: #e1e100;
+  outline: none;
+  border: 1px solid grey;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: "Titillium Web", sans-serif;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.signincontainer .signinform button:hover {
+  background-color: #008a00;
+  color: white;
+}
+
+.letsmap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.letsmap .allsearch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 200px;
+  margin: 20px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.letsmap .allsearch img {
+  padding: 19px;
+  width: 100%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 25px;
+}
+
+.letsmap .allsearch .name {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 7px 0px;
+}
+
+.letsmap .allsearch .price {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .letsmap {
+    -ms-grid-columns: (minmax(140px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  .letsmap .allsearch {
+    width: 120px;
+  }
+  .letsmap .allsearch img {
+    height: 120px;
   }
 }
 /*# sourceMappingURL=index.css.map */
