@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Meter() {
   const [hours, sethours] = useState(0);
   const [minutes, setminutes] = useState(0);
   const [seconds, setseconds] = useState(0);
 
-  let interval = useRef();
   let startTimer = () => {
-    interval = setInterval(() => {
+    setInterval(() => {
       let newDate = "29 June 2021";
 
       let currentDate = new Date();
