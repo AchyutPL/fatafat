@@ -21,7 +21,9 @@ export default function Newarrival() {
 
   useEffect(() => {
     const fetchdata = async () => {
-      const { data } = await Axios.get("http://localhost:5000/api/mobiles");
+      const { data } = await Axios.get(
+        "https://fatafatsewa.herokuapp.com/api/mobiles"
+      );
       setmobiles(data);
     };
     fetchdata();
