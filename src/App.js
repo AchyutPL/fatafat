@@ -52,6 +52,7 @@ function App() {
         <MessengerCustomerChat
           pageId="100684861940648"
           appId="925944014919620"
+          themeColor="red"
         />
       </div>
     </>
