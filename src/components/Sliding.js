@@ -28,7 +28,7 @@ export default function Sliding() {
     <>
       <Slider {...settings}>
         <div className="sliderimage">
-          <img src="/sliders/slide1.png" alt="" />
+          <img src="/sliders/2.png" alt="" />
         </div>
         <div className="sliderimage">
           <img src="/sliders/1.png" alt="" />
