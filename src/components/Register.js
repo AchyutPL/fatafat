@@ -5,8 +5,8 @@ export default function Register() {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
-  const register = useSelector((state) => state.register);
-  const { newuser } = register;
+  //   const register = useSelector((state) => state.register);
+  //   const { newuser } = register;
 
   const dispatch = useDispatch();
 
