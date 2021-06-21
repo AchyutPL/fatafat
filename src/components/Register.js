@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { registeruser } from "../redux/actions/actions";
 export default function Register() {
   const [email, setemail] = useState("");
