@@ -2,12 +2,14 @@ import { combineReducers } from "redux";
 import { productreducer } from "./productreducer";
 import { productscreenreducer } from "./productscreenreducer";
 import { cartreducer } from "./cartreducer";
-import { userReducer } from "./userreducer";
+import { signinReducer } from "./signinreducer";
+import { registerReducer } from "./registerreducer";
 const rootReducer = combineReducers({
   ourproduct: productreducer,
   productdetails: productscreenreducer,
   cart: cartreducer,
-  usersignin: userReducer,
+  signreducer: signinReducer,
+  register: registerReducer,
 });
 
 export default rootReducer;

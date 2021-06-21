@@ -8,6 +8,8 @@ import Smallphotos from "./components/Smallphotos";
 import Searchscreen from "./components/Searchscreen";
 import Meter from "./components/Meter";
 import Signin from "./components/Signin";
+import Register from "./components/Register";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import {
   BrowserRouter as Router,
   Switch,
@@ -40,12 +42,17 @@ function App() {
               )}
             ></Route>
             <Route path="/cart/:id?" component={Cartscreen}></Route>
+            <Route path="/register" component={Register}></Route>
             <Route path="/signin" component={Signin}></Route>
             <Route path="/search/:term" component={Searchscreen}></Route>
             <Route path="*" exact component={Notfound}></Route>
           </Switch>
           <Footer />
         </BrowserRouter>
+        <MessengerCustomerChat
+          pageId="100684861940648"
+          appId="925944014919620"
+        />
       </div>
     </>
   );

@@ -10,6 +10,9 @@ import {
   SIGNIN_REQUEST,
   SIGNIN_FAIL,
   SIGNIN_SUCCESS,
+  REGISTER_REQUEST,
+  REGISTER_SUCCESS,
+  REGISTER_FAIL,
 } from "./actionconstants";
 import Axios from "axios";
 
@@ -110,3 +113,32 @@ export const signIn = (email, password) => async (dispatch) => {
     });
   }
 };
+
+export const registeruser =
+  (email, password, cpassword) => async (dispatch) => {
+    dispatch({
+      type: REGISTER_REQUEST,
+      payload: {
+        email,
+        password,
+        cpassword,
+      },
+    });
+
+    try {
+      const { data } = Axios.post("http://localhost:5000/api/users/register", {
+        email,
+        password,
+        cpassword,
+      });
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: REGISTER_FAIL,
+        payload: error.message,
+      });
+    }
+  };

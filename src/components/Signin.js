@@ -10,8 +10,8 @@ export default function Signin(props) {
   const redirect = props.location.search
     ? props.location.search.split("=")[1]
     : "/";
-  const usersignin = useSelector((state) => state.usersignin);
-  const { userInfo } = usersignin;
+  const signreducer = useSelector((state) => state.signreducer);
+  const { userInfo } = signreducer;
   const Postdata = (e) => {
     e.preventDefault();
     dispatch(signIn(email, password));
@@ -43,6 +43,9 @@ export default function Signin(props) {
             onChange={(e) => setpassword(e.target.value)}
           />
           <button type="submit">Sign In</button>
+          <h5 style={{ textAlign: "center" }}>
+            New <a href="/register">Register</a> here
+          </h5>
         </form>
       </div>
     </>

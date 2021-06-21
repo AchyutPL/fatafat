@@ -4,7 +4,7 @@ import {
   SIGNIN_SUCCESS,
 } from "../actions/actionconstants";
 
-export const userReducer = (state = {}, action) => {
+export const signinReducer = (state = {}, action) => {
   switch (action.type) {
     case SIGNIN_REQUEST:
       return { loading: true };

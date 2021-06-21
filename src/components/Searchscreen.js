@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import { Link } from "react-router-dom";
 export default function Searchscreen(props) {
   const term = props.match.params.term;
 
@@ -21,7 +22,9 @@ export default function Searchscreen(props) {
       <div className="letsmap">
         {ourdata.map((data) => (
           <div className="allsearch">
-            <img src={data.path} alt="" />
+            <Link to={`/product/${data._id}`}>
+              <img src={data.path} alt="" />
+            </Link>
             <div className="name">{data.productname}</div>
             <div className="price">Price : {data.price}</div>
           </div>
