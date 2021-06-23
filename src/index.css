@@ -1337,10 +1337,9 @@ footer .flexflex {
   .ordersuccess {
     width: 90%;
   }
-}
-
-.fb_customer_chat_icon {
-  bottom: 50px;
-  margin: 20px 12px;
+  .fb_customer_chat_icon {
+    bottom: 50px;
+    margin: 35px 12px;
+  }
 }
 /*# sourceMappingURL=index.css.map */
