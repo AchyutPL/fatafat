@@ -1341,9 +1341,6 @@ footer .flexflex {
 
 iframe.fb_customer_chat_icon {
   bottom: 60px !important;
-}
-
-svg {
-  width: 31px !important;
+  right: 8px !important;
 }
 /*# sourceMappingURL=index.css.map */
