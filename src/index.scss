@@ -1101,6 +1101,10 @@ footer {
     width: 90%;
   }
 }
-iframe.fb_customer_chat_icon {
-  position: fixed;
+.fb_dialog.fb_dialog_advanced {
+  .fb_dialog_content {
+    .fb_customer_chat_icon {
+      bottom: 80px;
+    }
+  }
 }
