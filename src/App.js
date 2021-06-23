@@ -61,7 +61,6 @@ function App() {
           pageId="100684861940648"
           appId="925944014919620"
           themeColor="#ff4500"
-          minimized="true"
         />
       </div>
     </>
