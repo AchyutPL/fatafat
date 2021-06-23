@@ -1100,8 +1100,9 @@ footer {
   .ordersuccess {
     width: 90%;
   }
-  .fb_customer_chat_icon {
-    bottom: 50px;
-    margin: 35px 12px;
-  }
+}
+iframe.fb_customer_chat_icon {
+  position: fixed;
+  bottom: 66px;
+  left: 120px;
 }
