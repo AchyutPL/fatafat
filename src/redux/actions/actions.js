@@ -147,40 +147,41 @@ export const signout = () => (dispatch) => {
   dispatch({ type: SIGN_OUT });
 };
 
-export const registeruser = (name, email, password) => async (dispatch) => {
-  dispatch({
-    type: REGISTER_REQUEST,
-    payload: {
-      name,
-      email,
-      password,
-    },
-  });
-
-  try {
-    const { data } = Axios.post(
-      "https://fatafatsewa.herokuapp.com/api/users/register",
-      {
+export const registeruser =
+  (name, email, number, password) => async (dispatch) => {
+    dispatch({
+      type: REGISTER_REQUEST,
+      payload: {
         name,
         email,
         password,
-      }
-    );
-    dispatch({
-      type: REGISTER_SUCCESS,
-      payload: data,
+      },
     });
-    dispatch({
-      type: SIGNIN_SUCCESS,
-      payload: data,
-    });
-  } catch (error) {
-    dispatch({
-      type: REGISTER_FAIL,
-      payload: error.message,
-    });
-  }
-};
+
+    try {
+      const { data } = Axios.post(
+        "https://fatafatsewa.herokuapp.com/api/users/register",
+        {
+          name,
+          email,
+          password,
+        }
+      );
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: data,
+      });
+      dispatch({
+        type: SIGNIN_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: REGISTER_FAIL,
+        payload: error.message,
+      });
+    }
+  };
 
 export const saveshipping = (data) => (dispatch) => {
   dispatch({ type: CART_SAVE_SHIPPING_ADDRESS, payload: data });

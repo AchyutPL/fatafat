@@ -4,6 +4,7 @@ import { registeruser } from "../redux/actions/actions";
 import { useHistory } from "react-router-dom";
 export default function Register(props) {
   const [name, setname] = useState("");
+  const [phone, setphone] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
@@ -23,7 +24,7 @@ export default function Register(props) {
     } else if (password.length < 3) {
       alert("Password is too short");
     } else {
-      dispatch(registeruser(name, email, password));
+      dispatch(registeruser(name, phone, email, password));
       history.push(redirect);
     }
   };
@@ -49,7 +50,15 @@ export default function Register(props) {
           value={email}
           onChange={(e) => setemail(e.target.value)}
           required
-          placeholder="Enter valid email address........"
+        />
+        <label htmlFor="number">Number:</label>
+        <input
+          type="number"
+          name="number"
+          id="number"
+          value={phone}
+          onChange={(e) => setphone(e.target.value)}
+          required
         />
         <label htmlFor="password">Password</label>
         <input
