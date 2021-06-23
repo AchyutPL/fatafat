@@ -32,13 +32,10 @@ html {
     margin: 0px;
     height: 100%;
   }
-  .messenger {
-    height: 100px;
-    width: 100px;
-    overflow: hidden;
-  }
 }
-
+.fb_dialog.fb_dialog_advanced {
+  top: 100px;
+}
 /* -----------CSS FOR HEADER SECTION------------- */
 :root {
   --text-color: #707b8e;
