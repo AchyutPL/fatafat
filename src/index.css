@@ -1343,11 +1343,7 @@ iframe.fb_customer_chat_icon {
   bottom: 60px !important;
 }
 
-iframe.fb_customer_chat_icon svg {
+svg {
   width: 31px !important;
-}
-
-.plugin.chrome.webkit.win.x1.Locale_en_US:first-child {
-  width: 30px !important;
 }
 /*# sourceMappingURL=index.css.map */
