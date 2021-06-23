@@ -24,7 +24,7 @@ export default function Register(props) {
     } else if (password.length < 3) {
       alert("Password is too short");
     } else {
-      dispatch(registeruser(name, phone, email, password));
+      dispatch(registeruser(name, email, phone, password));
       history.push(redirect);
     }
   };
