@@ -10,10 +10,7 @@ body {
   height: 100%;
   background-color: black;
 }
-.fb_dialog.fb_dialog_advanced {
-  bottom: 80px;
-  left: 25px;
-}
+
 .rowtitles {
   color: orangered;
   padding-left: 15px;
@@ -1103,4 +1100,8 @@ footer {
   .ordersuccess {
     width: 90%;
   }
+}
+.fb_customer_chat_icon {
+  bottom: 50px;
+  margin: 20px 12px;
 }
