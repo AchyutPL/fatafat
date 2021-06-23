@@ -148,12 +148,13 @@ export const signout = () => (dispatch) => {
 };
 
 export const registeruser =
-  (name, email, number, password) => async (dispatch) => {
+  (name, email, phone, password) => async (dispatch) => {
     dispatch({
       type: REGISTER_REQUEST,
       payload: {
         name,
         email,
+        phone,
         password,
       },
     });
@@ -164,6 +165,7 @@ export const registeruser =
         {
           name,
           email,
+          phone,
           password,
         }
       );
