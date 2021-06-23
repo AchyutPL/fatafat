@@ -33,6 +33,11 @@ html {
     margin: 0px;
     height: 100%;
   }
+  .messenger {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+  }
 }
 
 /* -----------CSS FOR HEADER SECTION------------- */

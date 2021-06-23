@@ -53,11 +53,13 @@ function App() {
           </Switch>
           <Footer />
         </BrowserRouter>
-        <MessengerCustomerChat
-          pageId="100684861940648"
-          appId="925944014919620"
-          themeColor="#ff4500"
-        />
+        <div className="messenger">
+          <MessengerCustomerChat
+            pageId="100684861940648"
+            appId="925944014919620"
+            themeColor="#ff4500"
+          />
+        </div>
       </div>
     </>
   );
