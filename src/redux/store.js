@@ -2,6 +2,11 @@ import { applyMiddleware, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "./reducers/allreducers";
 const initialstate = {
+  signreducer: {
+    userInfo: localStorage.getItem("userInfo")
+      ? JSON.parse(localStorage.getItem("userInfo"))
+      : null,
+  },
   cart: {
     cartitems: localStorage.getItem("cartitems")
       ? JSON.parse(localStorage.getItem("cartitems"))

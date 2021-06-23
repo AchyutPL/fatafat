@@ -29,7 +29,8 @@ html {
   html,
   body {
     overflow-x: hidden;
-    margin: 1px;
+    margin: 0px;
+    height: 100%;
   }
 }
 
@@ -502,6 +503,9 @@ footer {
   footer {
     margin-top: 40px;
     margin-left: -50px;
+    .forfooter {
+      margin-bottom: 35px;
+    }
     .flexflex {
       flex-direction: column;
     }
@@ -680,7 +684,7 @@ footer {
   margin: 25px auto 10px auto;
   img {
     width: 20%;
-    object-fit: cover;
+    object-fit: contain;
     padding: 3.5px;
     border-radius: 15px;
     height: 50%;
@@ -872,5 +876,90 @@ footer {
         color: white;
       }
     }
+  }
+}
+.mobilesectionha {
+  display: none;
+}
+// ------------------------------------------CSS FOR THE FIXED SECTION-----------------------------------------
+@media screen and (max-width: 700px) {
+  .mobcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    position: -webkit-sticky;
+    bottom: 0;
+    height: 48px;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+    a {
+      text-decoration: none;
+      color: #707b8e;
+    }
+    .mobilesectionha {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        font-size: 21px;
+        padding: 4px 30px 0px 30px;
+        color: orangered;
+      }
+      span {
+        font-size: 14px;
+        font-family: "Titillium Web", sans-serif;
+        font-weight: 600;
+      }
+    }
+  }
+}
+// ---------------------CSS FOR MOB CATEGORY------------------
+
+.mobcategory {
+  border-top: 1px solid orangered;
+  border-bottom: 1px solid orangered;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 25px;
+  background-color: rgb(243, 243, 243);
+  padding: 10px;
+  .contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    img {
+      padding: 5px;
+      height: 100px;
+      width: 70%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+    span {
+      font-family: "Titillium Web", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: orangered;
+    }
+  }
+}
+
+// ------------------------------CSS FOR CHECOUT SCREEN----------------
+.checkoutsteps {
+  display: flex;
+  margin: 5px;
+  div {
+    border-top: 3px solid grey;
+    color: grey;
+    flex: 1;
+  }
+  .active {
+    border-top-color: orangered;
   }
 }

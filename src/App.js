@@ -9,6 +9,11 @@ import Searchscreen from "./components/Searchscreen";
 import Meter from "./components/Meter";
 import Signin from "./components/Signin";
 import Register from "./components/Register";
+import Mobcategory from "./components/Mobcategory";
+import Onlyformobile from "./components/Onlyformobile";
+import ShippingScreen from "./components/ShippingScreen";
+import Payment from "./components/Payment";
+import Placeorder from "./components/Placeorder";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import {
   BrowserRouter as Router,
@@ -24,27 +29,26 @@ function App() {
   return (
     <>
       <div className="formode">
+        <Onlyformobile />
         <BrowserRouter>
           <Header />
-          <Category />
-
           <Switch>
             <Router path="/" exact>
+              <Category />
               <Sliding />
               <Smallphotos />
               <Meter />
               <Newarrival />
             </Router>
-            <Route
-              path="/product/:id"
-              render={(props) => (
-                <Product {...props} key={props.match.params.id} />
-              )}
-            ></Route>
+            <Route path="/product/:id" component={Product}></Route>
             <Route path="/cart/:id?" component={Cartscreen}></Route>
             <Route path="/register" component={Register}></Route>
             <Route path="/signin" component={Signin}></Route>
+            <Route path="/shipping" component={ShippingScreen}></Route>
+            <Route path="/payment" component={Payment}></Route>
+            <Route path="/placeorder" component={Placeorder}></Route>
             <Route path="/search/:term" component={Searchscreen}></Route>
+            <Route path="/category" component={Mobcategory}></Route>
             <Route path="*" exact component={Notfound}></Route>
           </Switch>
           <Footer />

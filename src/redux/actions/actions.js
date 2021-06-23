@@ -13,6 +13,7 @@ import {
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  SIGN_OUT,
 } from "./actionconstants";
 import Axios from "axios";
 
@@ -45,7 +46,7 @@ export const productscreenlist = (productId) => async (dispatch) => {
 
   try {
     const { data } = await Axios.get(
-      `https://fatafatsewa.herokuapp.com/api/bags/${productId}`
+      `https://fatafatsewa.herokuapp.com/api/allproduct/${productId}`
     );
 
     dispatch({
@@ -62,7 +63,7 @@ export const productscreenlist = (productId) => async (dispatch) => {
 
 export const addToCart = (productId, qty) => async (dispatch, getState) => {
   const { data } = await Axios.get(
-    `https://fatafatsewa.herokuapp.com/api/bags/${productId}`
+    `https://fatafatsewa.herokuapp.com/api/allproduct/${productId}`
   );
 
   dispatch({
@@ -105,7 +106,7 @@ export const signIn = (email, password) => async (dispatch) => {
       type: SIGNIN_SUCCESS,
       payload: data,
     });
-    localStorage.setItem("userinfo", JSON.stringify(data));
+    localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (error) {
     dispatch({
       type: SIGNIN_FAIL,
@@ -114,31 +115,40 @@ export const signIn = (email, password) => async (dispatch) => {
   }
 };
 
-export const registeruser =
-  (email, password, cpassword) => async (dispatch) => {
-    dispatch({
-      type: REGISTER_REQUEST,
-      payload: {
-        email,
-        password,
-        cpassword,
-      },
-    });
+export const signout = () => (dispatch) => {
+  localStorage.removeItem("userInfo");
+  localStorage.removeItem("cartitems");
+  dispatch({ type: SIGN_OUT });
+};
 
-    try {
-      const { data } = Axios.post("http://localhost:5000/api/users/register", {
-        email,
-        password,
-        cpassword,
-      });
-      dispatch({
-        type: REGISTER_SUCCESS,
-        payload: data,
-      });
-    } catch (error) {
-      dispatch({
-        type: REGISTER_FAIL,
-        payload: error.message,
-      });
-    }
-  };
+export const registeruser = (name, email, password) => async (dispatch) => {
+  dispatch({
+    type: REGISTER_REQUEST,
+    payload: {
+      name,
+      email,
+      password,
+    },
+  });
+
+  try {
+    const { data } = Axios.post("http://localhost:5000/api/users/register", {
+      name,
+      email,
+      password,
+    });
+    dispatch({
+      type: REGISTER_SUCCESS,
+      payload: data,
+    });
+    dispatch({
+      type: SIGNIN_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: REGISTER_FAIL,
+      payload: error.message,
+    });
+  }
+};

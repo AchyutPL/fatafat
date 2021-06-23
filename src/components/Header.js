@@ -1,18 +1,24 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { signout } from "../redux/actions/actions";
 
-export default function Header({ count }) {
+export default function Header(props) {
   const cart = useSelector((state) => state.cart);
-
   const { cartitems } = cart;
-
+  const signreducer = useSelector((state) => state.signreducer);
+  const { userInfo } = signreducer;
   const [searchterm, setsearchterm] = useState("");
   const history = useHistory();
+  const dispatch = useDispatch();
   const gotoss = () => {
     history.push(`/search/${searchterm}`);
   };
+  const signOutHandler = () => {
+    dispatch(signout());
+  };
+
   return (
     <>
       <div className="headerContainer">
@@ -27,7 +33,18 @@ export default function Header({ count }) {
         </div>
         <div className="otherInfo">
           <div className="login_register">
-            <Link to="/signin">Login/Register</Link>
+            {userInfo ? (
+              <div className="dropdown">
+                <Link to="#">
+                  {userInfo.name} <i className="fa fa-caret-down"></i>{" "}
+                </Link>
+                <Link to="#" onClick={signOutHandler}>
+                  Sign Out
+                </Link>
+              </div>
+            ) : (
+              <Link to="/signin">Login/Register</Link>
+            )}
           </div>
           <div className="referEarn">
             <a href="/">Refer/Earn</a>
@@ -44,7 +61,7 @@ export default function Header({ count }) {
       <div className="searchArea">
         <div className="logo">
           <Link to="/">
-            <img src="/logo.png" alt="" />
+            <img src="/achyut.png" alt="" />
           </Link>
         </div>
         <div className="search">

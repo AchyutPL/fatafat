@@ -9,7 +9,7 @@ export const registerReducer = (state = {}, action) => {
     case REGISTER_REQUEST:
       return { loading: true };
     case REGISTER_SUCCESS:
-      return { newuser: action.payload };
+      return { userInfo: action.payload };
     case REGISTER_FAIL:
       return { error: action.payload };
     default:

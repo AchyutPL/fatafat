@@ -67,6 +67,7 @@ export default function Footer() {
       </footer>
 
       <div
+        className="forfooter"
         style={{
           backgroundColor: "black",
           color: "white",

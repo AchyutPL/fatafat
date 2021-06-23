@@ -7,6 +7,7 @@ import Message from "../components/Message";
 export default function Product(props) {
   const productdetails = useSelector((state) => state.productdetails);
   const { loading, error, bug } = productdetails;
+  console.log(bug);
   const dispatch = useDispatch();
   const productId = props.match.params.id;
   useEffect(() => {
@@ -16,6 +17,9 @@ export default function Product(props) {
 
   const addToCartHandler = () => {
     props.history.push(`/cart/${productId}?qty=${qty}`);
+  };
+  const buyNowHandler = () => {
+    props.history.push("/shipping");
   };
   return (
     <>
@@ -59,7 +63,7 @@ export default function Product(props) {
                 ></i>
                 Add To Cart
               </button>
-              <button className="btn">
+              <button className="btn" onClick={buyNowHandler}>
                 {" "}
                 <i
                   style={{ color: "black" }}

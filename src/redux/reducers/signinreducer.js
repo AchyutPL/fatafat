@@ -7,7 +7,7 @@ import {
 export const signinReducer = (state = {}, action) => {
   switch (action.type) {
     case SIGNIN_REQUEST:
-      return { loading: true };
+      return {};
     case SIGNIN_SUCCESS:
       return { loading: false, userInfo: action.payload };
     case SIGNIN_FAIL:
