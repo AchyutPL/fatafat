@@ -14,6 +14,11 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   SIGN_OUT,
+  CART_SAVE_SHIPPING_ADDRESS,
+  ADD_TO_BUY,
+  ORDER_REQUEST,
+  ORDER_SUCCESS,
+  ORDER_FAIL,
 } from "./actionconstants";
 import Axios from "axios";
 
@@ -80,6 +85,23 @@ export const addToCart = (productId, qty) => async (dispatch, getState) => {
   localStorage.setItem("cartitems", JSON.stringify(getState().cart.cartitems));
 };
 
+export const buynow = (productId, qty) => async (dispatch, getState) => {
+  const { data } = await Axios.get(
+    `https://fatafatsewa.herokuapp.com/api/allproduct/${productId}`
+  );
+  dispatch({
+    type: ADD_TO_BUY,
+    payload: {
+      name: data.productname,
+      image: data.path,
+      price: data.price,
+      countinstock: data.countinstock,
+      product: data._id,
+      qty,
+    },
+  });
+  localStorage.setItem("buyitems", JSON.stringify(getState().cart.buyitems));
+};
 export const removefromcart = (productId) => (dispatch, getState) => {
   dispatch({
     type: REMOVE_FROM_CART,
@@ -98,7 +120,7 @@ export const signIn = (email, password) => async (dispatch) => {
   });
   try {
     const { data } = await Axios.post(
-      "http://localhost:5000/api/users/signin",
+      "https://fatafatsewa.herokuapp.com/api/users/signin",
       { email, password }
     );
 
@@ -110,7 +132,10 @@ export const signIn = (email, password) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: SIGNIN_FAIL,
-      payload: "Error",
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
     });
   }
 };
@@ -118,6 +143,7 @@ export const signIn = (email, password) => async (dispatch) => {
 export const signout = () => (dispatch) => {
   localStorage.removeItem("userInfo");
   localStorage.removeItem("cartitems");
+  localStorage.removeItem("shippingaddress");
   dispatch({ type: SIGN_OUT });
 };
 
@@ -132,11 +158,14 @@ export const registeruser = (name, email, password) => async (dispatch) => {
   });
 
   try {
-    const { data } = Axios.post("http://localhost:5000/api/users/register", {
-      name,
-      email,
-      password,
-    });
+    const { data } = Axios.post(
+      "https://fatafatsewa.herokuapp.com/api/users/register",
+      {
+        name,
+        email,
+        password,
+      }
+    );
     dispatch({
       type: REGISTER_SUCCESS,
       payload: data,
@@ -150,5 +179,26 @@ export const registeruser = (name, email, password) => async (dispatch) => {
       type: REGISTER_FAIL,
       payload: error.message,
     });
+  }
+};
+
+export const saveshipping = (data) => (dispatch) => {
+  dispatch({ type: CART_SAVE_SHIPPING_ADDRESS, payload: data });
+  localStorage.setItem("shippingaddress", JSON.stringify(data));
+};
+
+export const orderdata = (orderData) => async (dispatch) => {
+  dispatch({ type: ORDER_REQUEST, payload: orderData });
+  try {
+    const { data } = Axios.post(
+      "https://fatafatsewa.herokuapp.com/api/orders",
+      orderData
+    );
+    dispatch({
+      type: ORDER_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({ type: ORDER_FAIL, payload: error });
   }
 };

@@ -13,7 +13,7 @@ export default function Register(props) {
   const history = useHistory();
   const redirect = props.location.search
     ? props.location.search.split("=")[1]
-    : "/";
+    : "/signin";
   const dispatch = useDispatch();
 
   const Postdata = (e) => {
@@ -28,11 +28,6 @@ export default function Register(props) {
     }
   };
 
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     history.push(redirect);
-  //   }
-  // }, [history, userInfo, redirect]);
   return (
     <div className="registercontainer">
       <h2>Register</h2>
@@ -54,6 +49,7 @@ export default function Register(props) {
           value={email}
           onChange={(e) => setemail(e.target.value)}
           required
+          placeholder="Enter valid email address........"
         />
         <label htmlFor="password">Password</label>
         <input

@@ -14,6 +14,7 @@ import Onlyformobile from "./components/Onlyformobile";
 import ShippingScreen from "./components/ShippingScreen";
 import Payment from "./components/Payment";
 import Placeorder from "./components/Placeorder";
+import Ordersuccess from "./components/Ordersuccess";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import {
   BrowserRouter as Router,
@@ -47,6 +48,8 @@ function App() {
             <Route path="/shipping" component={ShippingScreen}></Route>
             <Route path="/payment" component={Payment}></Route>
             <Route path="/placeorder" component={Placeorder}></Route>
+            <Route path="/orderplaced" component={Ordersuccess}></Route>
+
             <Route path="/search/:term" component={Searchscreen}></Route>
             <Route path="/category" component={Mobcategory}></Route>
             <Route path="*" exact component={Notfound}></Route>
@@ -58,6 +61,7 @@ function App() {
           pageId="100684861940648"
           appId="925944014919620"
           themeColor="#ff4500"
+          minimized="true"
         />
       </div>
     </>

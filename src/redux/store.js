@@ -11,6 +11,12 @@ const initialstate = {
     cartitems: localStorage.getItem("cartitems")
       ? JSON.parse(localStorage.getItem("cartitems"))
       : [],
+    shippingaddress: localStorage.getItem("shippingaddress")
+      ? JSON.parse(localStorage.getItem("shippingaddress"))
+      : {},
+    buyitems: localStorage.getItem("buyitems")
+      ? JSON.parse(localStorage.getItem("buyitems"))
+      : {},
   },
 };
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

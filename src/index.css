@@ -35,10 +35,6 @@ html {
   }
 }
 
-.fb_dialog.fb_dialog_advanced {
-  top: 100px;
-}
-
 /* -----------CSS FOR HEADER SECTION------------- */
 :root {
   --text-color: #707b8e;
@@ -137,19 +133,19 @@ html {
 /* MEDIA QUERY */
 @media screen and (max-width: 760px) {
   .headerContainer {
-    height: 18px;
+    height: 30px;
     padding: 3px 15px;
   }
   .otherInfo {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
   }
   .otherInfo a {
-    font-size: 8px;
-    padding: 5px 6px;
+    font-size: 12px;
+    padding: 0px 6px;
   }
   .contactNumber {
-    padding: 3px 15px;
-    font-size: 8px;
+    padding: 3px 2px;
+    font-size: 10px;
   }
   .sellProduct {
     display: none;
@@ -158,7 +154,7 @@ html {
     left: -3px;
   }
   .mode {
-    margin-top: 8px;
+    margin-top: 3px;
     height: 17px;
     width: 36px;
   }
@@ -808,8 +804,9 @@ footer .flexflex {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 80%;
-  -webkit-box-shadow: 5px 5px 5px 1px orangered;
-          box-shadow: 5px 5px 5px 1px orangered;
+  border: 2px solid orangered;
+  -webkit-box-shadow: 5px 5px 10px orangered;
+          box-shadow: 5px 5px 10px orangered;
   margin: 25px auto 10px auto;
 }
 
@@ -938,6 +935,12 @@ footer .flexflex {
   color: white;
 }
 
+@media screen and (max-width: 700px) {
+  .signincontainer {
+    width: 90%;
+  }
+}
+
 .letsmap {
   display: -ms-grid;
   display: grid;
@@ -1024,6 +1027,15 @@ footer .flexflex {
           flex-direction: column;
 }
 
+.registercontainer .registerform select {
+  height: 42px;
+  font-size: 18px;
+  padding: 0px;
+  outline: none;
+  border: 1px solid grey;
+  width: 98.5%;
+}
+
 .registercontainer .registerform label {
   font-size: 18px;
   font-weight: 600;
@@ -1056,6 +1068,12 @@ footer .flexflex {
 .registercontainer .registerform button:hover {
   background-color: #008a00;
   color: white;
+}
+
+@media screen and (max-width: 700px) {
+  .registercontainer {
+    width: 90%;
+  }
 }
 
 .mobilesectionha {
@@ -1173,6 +1191,151 @@ footer .flexflex {
 }
 
 .checkoutsteps .active {
+  color: orangered;
   border-top-color: orangered;
+}
+
+.paymentform {
+  width: 40%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.paymentform h1 {
+  font-family: "Titillium Web", sans-serif;
+}
+
+.paymentform input {
+  padding: 10px;
+  margin: 5px;
+}
+
+.paymentform label {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 0px;
+}
+
+.paymentform button {
+  width: 100%;
+  padding: 10px 0px;
+  margin: 39px 0px;
+  background-color: #e1e100;
+  outline: none;
+  border: 1px solid grey;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: "Titillium Web", sans-serif;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.paymentform button:hover {
+  background-color: #008a00;
+  color: white;
+}
+
+@media screen and (max-width: 700px) {
+  .paymentform {
+    width: 90%;
+  }
+}
+
+.placeorder {
+  width: 60%;
+  margin: auto;
+}
+
+.placeorder form h2,
+.placeorder form h3 {
+  font-family: "Titillium Web", sans-serif;
+}
+
+.placeorder form .shipping {
+  padding: 20px;
+  margin: 25px 0px;
+  border: 2px solid orangered;
+  border-radius: 10px;
+}
+
+.placeorder form .method {
+  padding: 20px;
+  margin: 5px 0px;
+  border: 2px solid orangered;
+  border-radius: 10px;
+}
+
+.placeorder form button {
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+  margin: 15px 0px 10px 0px;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid grey;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.placeorder form button:hover {
+  background-color: orangered;
+  color: white;
+}
+
+.placeorder form .cartcontainer.cartcontainershipping {
+  width: 100%;
+  height: 200px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .placeorder {
+    width: 90%;
+  }
+}
+
+.ordersuccess {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 300px;
+  width: 50%;
+  margin: auto;
+}
+
+.ordersuccess a {
+  text-decoration: none;
+  color: #00005a;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .ordersuccess {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=index.css.map */

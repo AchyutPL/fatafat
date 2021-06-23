@@ -11,7 +11,7 @@ export default function Signin(props) {
     ? props.location.search.split("=")[1]
     : "/";
   const signreducer = useSelector((state) => state.signreducer);
-  const { userInfo } = signreducer;
+  const { userInfo, error } = signreducer;
   const Postdata = (e) => {
     e.preventDefault();
     dispatch(signIn(email, password));
@@ -26,6 +26,9 @@ export default function Signin(props) {
       <div className="signincontainer">
         <h2>Log In</h2>
         <form className="signinform" onSubmit={Postdata}>
+          <p style={{ fontWeight: "600", color: "red", fontSize: "18px" }}>
+            {error}
+          </p>
           <label htmlFor="email">Username</label>
           <input
             type="email"

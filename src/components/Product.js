@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { productscreenlist } from "../redux/actions/actions";
+import { buynow, productscreenlist } from "../redux/actions/actions";
 import Loading from "../components/Loading";
 import Message from "../components/Message";
 
 export default function Product(props) {
   const productdetails = useSelector((state) => state.productdetails);
   const { loading, error, bug } = productdetails;
-  console.log(bug);
+
   const dispatch = useDispatch();
   const productId = props.match.params.id;
   useEffect(() => {
@@ -18,7 +18,9 @@ export default function Product(props) {
   const addToCartHandler = () => {
     props.history.push(`/cart/${productId}?qty=${qty}`);
   };
+
   const buyNowHandler = () => {
+    dispatch(buynow(productId, qty));
     props.history.push("/shipping");
   };
   return (

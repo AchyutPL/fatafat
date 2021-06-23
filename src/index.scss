@@ -33,9 +33,7 @@ html {
     height: 100%;
   }
 }
-.fb_dialog.fb_dialog_advanced {
-  top: 100px;
-}
+
 /* -----------CSS FOR HEADER SECTION------------- */
 :root {
   --text-color: #707b8e;
@@ -112,19 +110,19 @@ html {
 /* MEDIA QUERY */
 @media screen and (max-width: 760px) {
   .headerContainer {
-    height: 18px;
+    height: 30px;
     padding: 3px 15px;
   }
   .otherInfo {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
   }
   .otherInfo a {
-    font-size: 8px;
-    padding: 5px 6px;
+    font-size: 12px;
+    padding: 0px 6px;
   }
   .contactNumber {
-    padding: 3px 15px;
-    font-size: 8px;
+    padding: 3px 2px;
+    font-size: 10px;
   }
   .sellProduct {
     display: none;
@@ -133,7 +131,7 @@ html {
     left: -3px;
   }
   .mode {
-    margin-top: 8px;
+    margin-top: 3px;
     height: 17px;
     width: 36px;
   }
@@ -682,7 +680,8 @@ footer {
   height: 200px;
   justify-content: space-around;
   width: 80%;
-  box-shadow: 5px 5px 5px 1px orangered;
+  border: 2px solid orangered;
+  box-shadow: 5px 5px 10px orangered;
   margin: 25px auto 10px auto;
   img {
     width: 20%;
@@ -787,7 +786,11 @@ footer {
     }
   }
 }
-
+@media screen and (max-width: 700px) {
+  .signincontainer {
+    width: 90%;
+  }
+}
 // ----------------------------CSS FOR ALLSEARCH--------------------
 .letsmap {
   display: grid;
@@ -838,7 +841,7 @@ footer {
     }
   }
 }
-// -------------------------------CSS FOR REGISTE--------------------------------
+// -------------------------------CSS FOR REGISTER--------------------------------
 .registercontainer {
   width: 40%;
   margin: auto;
@@ -849,6 +852,14 @@ footer {
     justify-content: center;
     flex-direction: column;
     // text-align: center;
+    select {
+      height: 42px;
+      font-size: 18px;
+      padding: 0px;
+      outline: none;
+      border: 1px solid grey;
+      width: 98.5%;
+    }
     label {
       font-size: 18px;
       font-weight: 600;
@@ -878,6 +889,11 @@ footer {
         color: white;
       }
     }
+  }
+}
+@media screen and (max-width: 700px) {
+  .registercontainer {
+    width: 90%;
   }
 }
 .mobilesectionha {
@@ -952,7 +968,7 @@ footer {
   }
 }
 
-// ------------------------------CSS FOR CHECOUT SCREEN----------------
+// ------------------------------CSS FOR CHECKOUT SCREEN----------------
 .checkoutsteps {
   display: flex;
   margin: 5px;
@@ -962,6 +978,125 @@ footer {
     flex: 1;
   }
   .active {
+    color: orangered;
     border-top-color: orangered;
+  }
+}
+
+// ---------------------------------CSS FOR PAYMENT--------------------------
+.paymentform {
+  width: 40%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
+    font-family: "Titillium Web", sans-serif;
+  }
+  input {
+    padding: 10px;
+    margin: 5px;
+  }
+  label {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 0px;
+  }
+  button {
+    width: 100%;
+    padding: 10px 0px;
+    margin: 39px 0px;
+    background-color: #e1e100;
+    outline: none;
+    border: 1px solid grey;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+    font-family: "Titillium Web", sans-serif;
+    transition: all 0.5s ease;
+    &:hover {
+      background-color: rgb(0, 138, 0);
+      color: white;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .paymentform {
+    width: 90%;
+  }
+}
+
+// ----------------------CSS FOR PLACE ORDER------------------------
+.placeorder {
+  form {
+    h2,
+    h3 {
+      font-family: "Titillium Web", sans-serif;
+    }
+    .shipping {
+      padding: 20px;
+      margin: 25px 0px;
+      border: 2px solid orangered;
+      border-radius: 10px;
+    }
+    .method {
+      padding: 20px;
+      margin: 5px 0px;
+      border: 2px solid orangered;
+      border-radius: 10px;
+    }
+    button {
+      width: 100%;
+      margin: auto;
+      padding: 10px;
+      margin: 15px 0px 10px 0px;
+      font-family: "Titillium Web", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      border: 1px solid grey;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: orangered;
+        color: white;
+      }
+    }
+    .cartcontainer.cartcontainershipping {
+      width: 100%;
+      height: 200px;
+      box-shadow: none;
+      border-radius: 10px;
+    }
+  }
+  width: 60%;
+  margin: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .placeorder {
+    width: 90%;
+  }
+}
+// -------------------------CSS FOR ORDERSUCCESS----------------------
+
+.ordersuccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 300px;
+  width: 50%;
+  margin: auto;
+  a {
+    text-decoration: none;
+    color: rgb(0, 0, 90);
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .ordersuccess {
+    width: 90%;
   }
 }

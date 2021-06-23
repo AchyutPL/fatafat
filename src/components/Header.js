@@ -15,7 +15,8 @@ export default function Header(props) {
   const gotoss = () => {
     history.push(`/search/${searchterm}`);
   };
-  const signOutHandler = () => {
+  const signOutHandler = (e) => {
+    // e.preventDefault();
     dispatch(signout());
   };
 
@@ -38,17 +39,15 @@ export default function Header(props) {
                 <Link to="#">
                   {userInfo.name} <i className="fa fa-caret-down"></i>{" "}
                 </Link>
-                <Link to="#" onClick={signOutHandler}>
+                <a href="/signin" onClick={signOutHandler}>
                   Sign Out
-                </Link>
+                </a>
               </div>
             ) : (
               <Link to="/signin">Login/Register</Link>
             )}
           </div>
-          <div className="referEarn">
-            <a href="/">Refer/Earn</a>
-          </div>
+
           <div className="sellProduct">
             <a href="/"> Sell YourProduct</a>
           </div>
