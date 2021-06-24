@@ -11,7 +11,7 @@ export default function Newarrivallist({ product }) {
             </a>
           </div>
           <div className="bagname">{product.productname}</div>
-          <div className="price">Rs.4000</div>
+          <div className="price">{product.price}</div>
           <div className="btn">
             <button type="submit">Add to Wish-List</button>
           </div>
